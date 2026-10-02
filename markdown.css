@@ -27,7 +27,7 @@
 /* ---------- 全体 ---------- */
 html body {
   max-width: 860px;
-  margin: 0 auto;
+  margin: 0;
   padding: 1em 26px 0;
   font-family: "Noto Sans JP", "Yu Gothic UI", "Meiryo UI", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.7;
@@ -120,11 +120,14 @@ body kbd {
 /* ---------- 表 ---------- */
 body table { width: 100%; margin: 0 0 1rem; border-collapse: collapse; font-size: 1em; line-height: 1.5; }
 body table th, body table td {
+  min-width: 6em;
   padding: 0.5rem 0.75rem;
   text-align: left;
   color: var(--md-text) !important;
   border: 1px solid var(--md-border) !important;
 }
+/* 表内の長いコードは途中で折り返して、列が潰れたりはみ出したりしないようにする */
+body table td code, body table th code { overflow-wrap: anywhere; }
 body table th { font-weight: 700; background-color: var(--md-bg-sub) !important; }
 
 /* ---------- 区切り線・画像 ---------- */
