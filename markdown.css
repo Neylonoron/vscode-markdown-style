@@ -28,7 +28,7 @@
 html body {
   max-width: 860px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1em 26px 0;
   font-family: "Noto Sans JP", "Yu Gothic UI", "Meiryo UI", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.7;
   letter-spacing: 0.02em;
@@ -38,12 +38,11 @@ html body {
 
 /* ---------- 見出し ---------- */
 body h1, body h2, body h3, body h4, body h5, body h6 {
-  margin: 1.6em 0 0.5em;
   font-weight: 700;
   color: var(--md-text) !important;
 }
 
-body h1 { font-size: 2em; line-height: 1.4; padding-bottom: 0.3em; border-bottom: 1px solid var(--md-border) !important; }
+body h1 { font-size: 2em; line-height: 1.25; padding-bottom: 0.3em; border-bottom: 1px solid var(--md-border) !important; }
 body h2 { font-size: 1.5em; line-height: 1.5; padding-bottom: 0.25em; border-bottom: 1px solid var(--md-border) !important; }
 body h3 { font-size: 1.25em; line-height: 1.5; }
 body h4 { font-size: 1.1em; line-height: 1.6; }
@@ -104,6 +103,18 @@ body pre code {
   background-color: transparent !important;
   border: none;
   border-radius: 0;
+}
+
+/* ---------- キー表記（<kbd>） ---------- */
+body kbd {
+  padding: 0.1em 0.4em;
+  font-family: var(--vscode-editor-font-family, Consolas, "Courier New", monospace);
+  font-size: 0.9em;
+  color: var(--md-text) !important;
+  background-color: var(--md-bg-sub) !important;
+  border: 1px solid var(--md-border-strong) !important;
+  border-bottom-width: 2px !important;
+  border-radius: 0.25rem;
 }
 
 /* ---------- 表 ---------- */
