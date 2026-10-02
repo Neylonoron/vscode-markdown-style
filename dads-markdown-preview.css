@@ -11,7 +11,7 @@
  * Design policy:
  * - Font sizes: inherit VS Code Markdown Preview defaults
  * - Font family / colors / spacing: DADS-inspired
- * - Layout width: aligned with the existing markdown.css reference
+ * - Layout width: aligned with VS Code's built-in markdown.css
  * - Light preview regardless of the VS Code editor theme
  */
 
