@@ -1,0 +1,449 @@
+/*
+ * VS Code Markdown Preview - DADS inspired theme
+ *
+ * Reference:
+ *   Digital Agency Design System (DADS)
+ *   https://design.digital.go.jp/dads/
+ *
+ * This stylesheet is an independent adaptation for VS Code Markdown Preview.
+ * It is not an official Digital Agency stylesheet.
+ *
+ * Design policy:
+ * - Font sizes: inherit VS Code Markdown Preview defaults
+ * - Font family / colors / spacing: DADS-inspired
+ * - Layout width: aligned with the existing markdown.css reference
+ * - Light preview regardless of the VS Code editor theme
+ */
+
+/* =========================================================
+   Tokens
+   ========================================================= */
+
+:root {
+  --md-text: #1a1a1a;
+  --md-text-sub: #4d4d4d;
+  --md-bg: #ffffff;
+  --md-bg-sub: #f5f5f5;
+  --md-bg-code: #1f2328;
+
+  --md-border: #d9d9d9;
+  --md-border-strong: #949494;
+
+  --md-link: #0031d8;
+  --md-link-hover: #00118f;
+  --md-link-visited: #5c2483;
+
+  --md-focus: #000000;
+  --md-focus-outer: #ffd43b;
+
+  --md-code-text: #f0f3f6;
+  --md-code-border: #444c56;
+
+  --md-mark: #fff1a8;
+
+  --md-radius-sm: 4px;
+  --md-radius-md: 8px;
+}
+
+/* =========================================================
+   Page / body
+   ========================================================= */
+
+html {
+  background: var(--md-bg) !important;
+}
+
+html body {
+  box-sizing: content-box;
+  max-width: 860px;
+  margin: 0;
+  padding: 1em 26px 64px;
+
+  font-family:
+    "Noto Sans JP",
+    "Yu Gothic UI",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+
+  color: var(--md-text) !important;
+  background: var(--md-bg) !important;
+
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+  text-rendering: optimizeLegibility;
+}
+
+/* Force the preview itself to stay light even when VS Code is dark. */
+body.vscode-dark,
+body.vscode-high-contrast,
+body.vscode-high-contrast-light {
+  color: var(--md-text) !important;
+  background: var(--md-bg) !important;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #000000;
+  background: #b5e4ff;
+}
+
+/* =========================================================
+   Headings
+   DADS Standard text style scale
+   ========================================================= */
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--md-text) !important;
+  scroll-margin-top: 24px;
+}
+
+body h1 {
+  margin: 0 0 0.5em;
+  padding-bottom: 0.3em;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--md-border) !important;
+}
+
+body h2 {
+  margin: 1.6em 0 0.5em;
+  padding-bottom: 0.25em;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--md-border) !important;
+}
+
+body h3 {
+  margin: 1.6em 0 0.5em;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  border-bottom: none !important;
+}
+
+body h4 {
+  margin: 1.6em 0 0.5em;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  border-bottom: none !important;
+}
+
+body h5 {
+  margin: 1.6em 0 0.5em;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  border-bottom: none !important;
+}
+
+body h6 {
+  margin: 1.6em 0 0.5em;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: var(--md-text-sub) !important;
+  border-bottom: none !important;
+}
+
+
+/* =========================================================
+   Paragraph / inline text
+   ========================================================= */
+
+body p {
+  margin: 0 0 1rem;
+}
+
+body strong {
+  font-weight: 700;
+}
+
+body em {
+  font-style: italic;
+}
+
+body del {
+  color: var(--md-text-sub);
+  text-decoration-thickness: 1px;
+}
+
+body mark {
+  padding: 0.05em 0.2em;
+  color: var(--md-text);
+  background: var(--md-mark);
+  border-radius: 2px;
+}
+
+body small {
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+body a {
+  color: var(--md-link) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+body a:visited {
+  color: var(--md-link-visited) !important;
+}
+
+body a:hover {
+  color: var(--md-link-hover) !important;
+  text-decoration-thickness: 2px;
+}
+
+body a:focus-visible,
+body summary:focus-visible,
+body input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--md-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--md-focus-outer);
+  border-radius: 2px;
+}
+
+/* =========================================================
+   Lists / task lists
+   ========================================================= */
+
+body ul,
+body ol {
+  margin: 0 0 1rem;
+  padding-left: 2rem;
+}
+
+body li {
+  margin-bottom: 0.25rem;
+  padding-left: 0;
+}
+
+body li > ul,
+body li > ol {
+  margin: 0.25rem 0 0;
+}
+
+body input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em 0 0;
+  vertical-align: -0.08em;
+  accent-color: var(--md-link);
+}
+
+/* VS Code / GitHub-style task list class, when present */
+body .task-list-item {
+  list-style: none;
+}
+
+body .task-list-item input[type="checkbox"] {
+  margin-left: -1.45em;
+}
+
+/* =========================================================
+   Blockquote
+   ========================================================= */
+
+body blockquote {
+  margin: 0 0 1rem;
+  padding: 0.5rem 1rem;
+
+  color: var(--md-text-sub) !important;
+  background: var(--md-bg-sub) !important;
+  border-left: 4px solid var(--md-border-strong) !important;
+  border-radius: 0 var(--md-radius-sm) var(--md-radius-sm) 0;
+}
+
+body blockquote p:last-child,
+body blockquote ul:last-child,
+body blockquote ol:last-child {
+  margin-bottom: 0;
+}
+
+body blockquote blockquote {
+  margin-top: 16px;
+}
+
+/* =========================================================
+   Inline code
+   Size is inherited from VS Code Markdown Preview
+   ========================================================= */
+
+body code {
+  font-family: var(--vscode-editor-font-family, Consolas, "Courier New", monospace);
+  font-size: 1em;
+  line-height: 1.357em;
+  letter-spacing: 0;
+
+  padding: 1px 3px;
+  color: var(--md-text) !important;
+  background: var(--md-bg-sub) !important;
+  border: none;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   Code blocks
+   ========================================================= */
+
+body pre {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+
+  line-height: 1.5;
+  tab-size: 4;
+
+  background: #0d1117 !important;
+  border: 1px solid #30363d !important;
+  border-radius: var(--md-radius-md);
+}
+
+body pre code {
+  display: block;
+  min-width: max-content;
+
+  padding: 0;
+  font-family: var(--vscode-editor-font-family, Consolas, "Courier New", monospace);
+  font-size: var(--vscode-editor-font-size, 1em);
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  color: var(--md-code-text) !important;
+  background: transparent !important;
+  border: none;
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   Tables
+   ========================================================= */
+
+body table {
+  width: 100%;
+  margin: 0 0 1rem;
+  border-collapse: collapse;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+body thead {
+  background: var(--md-bg-sub) !important;
+}
+
+body th,
+body td {
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+  text-align: left;
+
+  color: var(--md-text) !important;
+  border: 1px solid var(--md-border) !important;
+}
+
+body th {
+  font-weight: 700;
+}
+
+body tbody tr:nth-child(even) {
+  background: #fafafa !important;
+}
+
+/* =========================================================
+   Horizontal rule
+   ========================================================= */
+
+body hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--md-border) !important;
+}
+
+/* =========================================================
+   Images
+   ========================================================= */
+
+body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px auto;
+  border-radius: var(--md-radius-md);
+}
+
+/* =========================================================
+   Small HTML elements often used inside Markdown
+   ========================================================= */
+
+body kbd {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+
+  font-family:
+    "Noto Sans Mono",
+    Consolas,
+    "Courier New",
+    monospace;
+  line-height: 1.5;
+
+  color: var(--md-text);
+  background: var(--md-bg-sub);
+  border: 1px solid var(--md-border-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--md-radius-sm);
+}
+
+body details {
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border: 1px solid var(--md-border);
+  border-radius: var(--md-radius-md);
+}
+
+body summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+body details[open] summary {
+  margin-bottom: 12px;
+}
+
+/* =========================================================
+   Print
+   ========================================================= */
+
+@media print {
+  html body {
+    max-width: none;
+    padding: 0;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  body a {
+    color: #000000 !important;
+  }
+
+  body pre {
+    white-space: pre-wrap;
+  }
+}
