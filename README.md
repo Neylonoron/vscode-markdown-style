@@ -18,6 +18,7 @@ VS Code の Markdown プレビュー用 CSS です。どのフォルダの `.md`
 | --- | --- |
 | `markdown.css` | 基本のスタイルです。 |
 | `dads-markdown-preview.css` | 同じ意図で、見た目を少し変えたものです。 |
+| `markdown-wide.css` | `markdown.css` から本文の最大幅（860px）の制限を外したものです。表を広く使いたいときに向いています。 |
 
 ## 使い方
 
@@ -37,7 +38,7 @@ https://cdn.jsdelivr.net/gh/Neylonoron/vscode-markdown-style/markdown.css
 ]
 ```
 
-別のスタイルを使う場合は、URL の `markdown.css` を `dads-markdown-preview.css` に変えます。両方を同時に指定すると、後ろのものが前のものを上書きして、見た目が混ざります。
+別のスタイルを使う場合は、URL の `markdown.css` を `dads-markdown-preview.css` または `markdown-wide.css` に変えます。両方を同時に指定すると、後ろのものが前のものを上書きして、見た目が混ざります。
 
 ### 設定の注意点
 
